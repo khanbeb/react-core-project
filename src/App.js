@@ -31,10 +31,10 @@ function App() {
       <Product products={products[2]}></Product>
       <Product products={products[3]}></Product>
 
-        {/* <Person name={FamilyName[0]} job="Facebook"></Person>
+        <Person name={FamilyName[0]} job="Facebook" age="5"></Person>
         <Person name={FamilyName[1]} job="Designer"></Person>
         <Person name={FamilyName[2]} job="Toto "></Person>
-        <Person name={FamilyName[3]} job="Toto "></Person> */}
+        <Person name={FamilyName[3]} job="Toto "></Person>
       </header>
     </div>
   );
@@ -98,34 +98,26 @@ function Product(props){
 }
 
 
+function Person(props) {
 
+    const personStyle = {
+      border: '5px solid yellow',
+      borderRadius: '15px',
+      margin: '10px',
+      padding: '20px',
+      textAlign: 'center',
+      color: 'green',
+    }
 
+  return ( <div style={personStyle}>
 
+  <h2>My Name: {props.name}</h2>
+    <h4> I am doing job {props.job} last {props.age || 2} years</h4>
 
+  </div>
 
+  );
 
-
-
-// function Person(props) {
-
-//     const personStyle = {
-//       border: '5px solid yellow',
-//       borderRadius: '15px',
-//       margin: '10px',
-//       padding: '20px',
-//       textAlign: 'center',
-//       color: 'green',
-//     }
-
-//   return ( <div style={personStyle}>
-
-//   <h2>My Name: {props.name}</h2>
-//     <h4>My job is: {props.job}</h4>
-
-//   </div>
-
-//   );
-
-//   }
+  }
 
 export default App;
