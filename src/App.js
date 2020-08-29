@@ -19,6 +19,7 @@ function App() {
       <header className="App-header">
 
         <Counter></Counter>
+
         <Users></Users>
         <ul>
           {
@@ -41,7 +42,7 @@ function App() {
 }
 
 function Counter() {
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(5);
   const handleIncrease = () => { setCount(count + 1);
   }
   return (
@@ -49,10 +50,19 @@ function Counter() {
       <h1> Count: {count}</h1>
       <button onClick={() => setCount(count - 1)}> Decrease</button>
       <button onClick={handleIncrease}> Increase</button>
+      <BusRider bus={count + 2}></BusRider>
+      <BusRider bus={count + 3}></BusRider>
+      <BusRider bus={count + 1}></BusRider>
+      <BusRider bus={count + 6}></BusRider>
+      <BusRider bus={count + 7}></BusRider>
     </div>
   )  
 }
 
+
+function BusRider(props) {
+return <h3>My bus count {props.bus}</h3>
+}
 
 function Users() {
   const [users, setUsers] = useState([]);
